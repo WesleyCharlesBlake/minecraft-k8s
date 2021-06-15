@@ -1,4 +1,5 @@
 FROM openjdk:18-buster
+LABEL org.opencontainers.image.authors="WesleyCharlesBlake"
 
 WORKDIR /usr/src/minecraft
 
@@ -13,5 +14,4 @@ COPY server.properties /usr/src/minecraft/server.properties
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-#CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "server.jar", "nogui" ]
 ENTRYPOINT ["/entrypoint.sh"]

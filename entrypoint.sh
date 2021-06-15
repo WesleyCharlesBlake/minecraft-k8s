@@ -10,7 +10,12 @@ eula=${EULA,,}
   fi
 }
 
+function updateOps() {
+  echo $OPS | awk -v RS=, '{print}' > /usr/src/minecraft/ops.txt
+}
+
 writeEula
+updateOps
 
 echo "Starting your Minecraft server....."
 
